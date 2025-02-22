@@ -18,6 +18,7 @@ jobs:
       - run: docker build -t schnarbiemeows/multi-server ./server
       - run: docker build -t schnarbiemeows/multi-worker ./worker
 
+
       - run: docker push schnarbiemeows/multi-client
       - run: docker push schnarbiemeows/multi-nginx
       - run: docker push schnarbiemeows/multi-server
