@@ -1,8 +1,8 @@
-name: Deploy DockerMulti
+name: Deploy MultiDocker
 on:
   push:
     branches:
-      - master # check your repo, your default branch might be master!
+      - main # check your repo, your default branch might be master!
 
 jobs:
   build:
@@ -18,11 +18,11 @@ jobs:
       - run: docker build -t schnarbies/multi-server ./server
       - run: docker build -t schnarbies/multi-worker ./worker
 
-
       - run: docker push schnarbies/multi-client
       - run: docker push schnarbies/multi-nginx
       - run: docker push schnarbies/multi-server
       - run: docker push schnarbies/multi-worker
+
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
 
