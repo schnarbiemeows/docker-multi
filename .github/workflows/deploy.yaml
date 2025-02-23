@@ -1,8 +1,8 @@
-name: Deploy MultiDocker
+name: Deploy DockerMulti
 on:
   push:
     branches:
-      - main # check your repo, your default branch might be master!
+      - master # check your repo, your default branch might be master!
 
 jobs:
   build:
